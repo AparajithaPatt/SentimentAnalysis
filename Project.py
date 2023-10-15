@@ -8,22 +8,19 @@ import re
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from sklearn.utils import resample
-#from imblearn.combine import SMOTETomek
-#from imblearn.under_sampling import TomekLinks
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from sklearn.model_selection import train_test_split
-from keras.layers import Bidirectional  # Import Bidirectional layer from Keras
-from keras_tuner import HyperModel, BayesianOptimization  # Import HyperModel and BayesianOptimization from Keras Tuner
-from tensorflow.keras.models import Sequential  # Import Sequential model from TensorFlow Keras
+from keras.layers import Bidirectional
+from keras_tuner import HyperModel, BayesianOptimization
+from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Embedding, LSTM, Dense, Dropout, Conv1D, GlobalMaxPooling1D
-from tensorflow.keras.optimizers import Adam  # Import Adam optimizer
-from tensorflow.keras.losses import SparseCategoricalCrossentropy  # Import SparseCategoricalCrossentropy loss
+from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.losses import SparseCategoricalCrossentropy
 from sklearn.utils.class_weight import compute_class_weight
-from tensorflow.keras.callbacks import EarlyStopping, ReduceLROnPlateau  # Import callbacks for model training
-from kerastuner.tuners import RandomSearch  # Import RandomSearch tuner from Keras Tuner
-from tensorflow.keras.losses import SparseCategoricalCrossentropy  # Import SparseCategoricalCrossentropy loss from TensorFlow Keras
-#from keras_tuner.HyperModel import HyperModel
+from tensorflow.keras.callbacks import EarlyStopping, ReduceLROnPlateau
+from kerastuner.tuners import RandomSearch
+from tensorflow.keras.losses import SparseCategoricalCrossentropy
 from kerastuner import *
 
 df = pd.read_csv("train.csv",encoding= 'unicode_escape')
